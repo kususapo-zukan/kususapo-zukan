@@ -12,7 +12,7 @@ body {
 	color: #666;	/*全体の文字色*/
 	font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
 	font-size: 16px;	/*文字サイズ*/
-	line-height: 2;		/*行間*/
+	line-height: 1.8;		/*行間*/
 	background: #f4f3f3 url(../images/bg1.jpg);	/*背景色と壁紙*/
 	-webkit-text-size-adjust: none;
 }
@@ -688,12 +688,57 @@ header #logo {
 /*カスタム設定
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-#main .caution {
-	background: #ffffdd;
-	margin: 0 0 30px 0;
+strong {
+	border-bottom: solid 3px #ff6666;
+	padding: 0 0 0.1em 0;
+}
+
+#main h2 {
+	margin-top: 20px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+#main h2 .subtitle {
+	font-size: 12pt;
+	color: #68b6c8;
+}
+#main h2 .subtitle:before {
+	content: "- "
+}
+#main h2 + p,
+#main h3 + p {
+	margin-top: 0;
+}
+#main h4 {
+	clear: both;
+	margin-bottom: 20px;
+	padding: 4px 20px;
+	border-radius: 30px;
+	border: 1px dashed #cccccc;
+	font-size: 11pt;
+}
+@media screen and (max-width:480px) {
+	strong {
+		padding: 0;
+	}
+
+	#main h2 .subtitle {
+		font-size: 10pt;
+	}
+}
+
+#main p.caution {
+	background: #ffffcc;
+	margin: 0 0 40px 0;
 	padding: 15px 20px;
-	font-size: 70%;
+	font-size: 80%;
 	border-radius: 5px;
+}
+
+.saturday-color {
+	color: #6666ff;
+}
+.sunday-color {
+	color: #ff6666;
 }
 
 .top header .inner::before {
@@ -707,19 +752,36 @@ header #logo {
 	left: 0;
 	content: ' ';
 }
+@media screen and (max-width:400px) {
+	header #logo {
+		width: 300px;	/*画像の幅*/
+	}
+}
 
+#main .blockquote-container {
+	padding: 0 20px 20px 0;
+}
 #main blockquote {
-	margin: 0 0 0 0;	/*上、左右、下への余白*/
+	margin: 0 0 0 0;
 	padding: 0 0 0 12px;
 	border-left: solid 8px #4896a8;
 }
 #main .blockquote-cite {
 	text-align: right;
-	margin: 0 20px 25px 0;	/*下方向の余白が足りない気がするので 5px 余計に設定しておく*/
+	margin: 0 0 0 0;	/*下方向の余白が足りない気がするので 5px 余計に設定しておく*/
 	padding: 5px 0 5px 12px;
 	border-left: solid 8px #4896a8;
 }
 
+#main .button-list {
+	text-align: center;
+	padding: 0 20px 15px 20px;	/*各ボタンの下余白 5px 分を差し引く*/
+}
+#main .button-list:after {
+	display: block;
+	clear: both;
+	content: "";
+}
 #main .button-list li a {
 	float: left;
 	width: 250px;
@@ -731,6 +793,7 @@ header #logo {
 	line-height: 1.2em;
 	text-decoration: none;
 	border-radius: 5px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 
     display: flex;
     justify-content: center; /*左右中央揃え*/
@@ -739,46 +802,31 @@ header #logo {
 #main .button-list li a:hover {
 	background: #68b6c8;
 }
-#main .button-list {
-	text-align: center;
-	margin: 0 20px 15px 20px;	/*各ボタンの下余白 5px 分を差し引く*/
-}
-#main .button-list:after {
-	display: block;
-	clear: both;
-	content: "";
-}
 
 #main .privacy-list {
-	margin: 0 20px 20px 40px;
+	padding: 0 20px 20px 40px;
 }
 #main .privacy-list li {
 	list-style-type: square;
 	margin: 0 0 10px 0;
 }
 
-strong {
-	border-bottom: solid 3px #ff6666;
-	padding: 0 0 2px 0;
+#roulette-button-container {
+	padding: 0 20px 20px 20px;
 }
-
-.saturday-color {
-	color: #6666ff;
-}
-.sunday-color {
-	color: #ff6666;
-}
-
-#roulette-start {
+#roulette-button {
 	border: none;
 	cursor: pointer;
 	width: 200px;
 	height: 40px;
 	background: #ff6666;
 	color: #ffffff;
-	margin: 0 20px 20px 20px;
 	padding: 5px;
 	text-decoration: none;
 	border-radius: 5px;
 	outline: 0;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+#roulette-button:hover {
+	background: #ff9999;
 }
