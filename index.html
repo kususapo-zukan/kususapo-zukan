@@ -61,12 +61,14 @@
 <p>参加者把握のため、 <strong>お好きなページより参加登録</strong> いただいた上で、期日までに <strong>アナログ・デジタルどちらかの方法でプロフィールをご提出</strong> ください。</p>
 <p>TwiPla は複数ページで参加登録していただく必要はありません。</p>
 <p>お付き合いのある馴染みのフラスタ企画の方のページで登録していただいても結構ですし、どれかひとつをランダムに選んでいただいても構いませんので、 <strong>お好きなページ1箇所で登録</strong> いただければと思います。</p>
-<ul class="button-list">
+<ul class="button-list" id="twipla">
 	<li><a href="" target="_blank">くすサポ OIC 部 TwiPla</a></li>
 	<li><a href="" target="_blank">くすフラ TwiPla</a></li>
 	<li><a href="" target="_blank">すっちー・ざんたか TwiPla</a></li>
 	<li><a href="" target="_blank">Vifleurs TwiPla</a></li>
 </ul>
+<input type="button" id="roulette-start" value="TwiPla をランダムに並び替える"></input>
+
 <p>There are also application forms (TwiPla) for foreign language speakers!</p>
 <ul class="button-list">
 	<li><a href="" target="_blank">TwiPla for English speakers</a></li>
@@ -200,5 +202,26 @@
 <!--ページの上部に戻る「↑」ボタン-->
 <p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
 
+<script type="text/javascript">
+	function roulette(){
+		let arr = [];
+		document.querySelectorAll('#twipla li').forEach(function(element) {
+			arr.push(element);
+		});
+		arr.sort(function() {
+			return Math.random() - Math.random();
+		});
+		document.querySelector('#twipla').innerHTML = '';
+		arr.forEach(function(element){
+			document.querySelector('#twipla').append(element);
+		});
+	}
+	document.addEventListener("DOMContentLoaded", function(event) {
+		roulette();
+	});
+	document.querySelector('#roulette-start').addEventListener('click', e => {
+		roulette();
+	});
+</script>
 </body>
 </html>
