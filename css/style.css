@@ -720,9 +720,11 @@ strong {
 	strong {
 		padding: 0;
 	}
-
 	#main h2 .subtitle {
 		font-size: 10pt;
+	}
+	.top header .inner {
+		height: 160px;	/*高さの再指定*/
 	}
 }
 
@@ -743,7 +745,7 @@ strong {
 
 .top header .inner::before {
 	background-color: black;
-	opacity: 0.3;
+	opacity: 0.15;
 	/* 自由に位置指定 */
 	position: absolute;
 	top: 0;
@@ -801,6 +803,10 @@ strong {
 }
 #main .button-list li a:hover {
 	background: #68b6c8;
+}
+#main .button-list.coming-soon li a {
+	background: #aaa;
+	pointer-events: none;
 }
 
 #main .privacy-list {
