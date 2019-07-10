@@ -808,6 +808,11 @@ strong {
 	background: #aaa;
 	pointer-events: none;
 }
+@media screen and (max-width:480px) {
+	#main .button-list {
+		padding: 0 10px 15px 10px;
+	}
+}
 
 #main .privacy-list {
 	padding: 0 20px 20px 40px;
@@ -815,6 +820,11 @@ strong {
 #main .privacy-list li {
 	list-style-type: square;
 	margin: 0 0 10px 0;
+}
+@media screen and (max-width:480px) {
+	#main .privacy-list {
+		padding: 0 10px 20px 30px;
+	}
 }
 
 #roulette-button-container {
@@ -835,4 +845,26 @@ strong {
 }
 #roulette-button:hover {
 	background: #ff9999;
+}
+#roulette-result {
+	padding: 0 20px 20px 20px;
+}
+#roulette-result .button-list {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 5px;
+}
+#roulette-result .button-list li a {
+	width: 190px;
+	height: 30px;
+	padding: 5px;
+	font-size: 11px;
+}
+@media screen and (max-width:480px) {
+	#roulette-button-container {
+		padding: 0 10px 20px 10px;
+	}
+	#roulette-result {
+		padding: 0 10px 20px 10px;
+	}
 }
