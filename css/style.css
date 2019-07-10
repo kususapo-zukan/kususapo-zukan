@@ -836,3 +836,7 @@ strong {
 #roulette-button:hover {
 	background: #ff9999;
 }
+
+#roulette-result {
+	padding: 0 20px 20px 20px;
+}

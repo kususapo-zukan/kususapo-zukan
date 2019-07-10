@@ -81,8 +81,10 @@
 	<li><a href="https://twipla.jp/events/394529" target="_blank">Vifleurs TwiPla</a></li>
 </ul>
 <div id="roulette-button-container">
-	<input type="button" id="roulette-button" value="TwiPla をランダムに並び替える"></input>
+	<input type="button" id="roulette-button" value="TwiPla ガチャをひく"></input>
 </div>
+
+<div id="roulette-result"></div>
 
 <!--
 <p>There are also application forms (TwiPla) for foreign language speakers!<br />
@@ -224,7 +226,7 @@
 <p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
 
 <script type="text/javascript">
-	function roulette(){
+	document.addEventListener("DOMContentLoaded", function(event) {
 		let twiplaList = [];
 		document.querySelectorAll("#twipla-list li").forEach(function(element) {
 			twiplaList.push(element);
@@ -236,12 +238,22 @@
 		twiplaList.forEach(function(element){
 			document.querySelector('#twipla-list').append(element);
 		});
-	}
-	document.addEventListener("DOMContentLoaded", function(event) {
-		roulette();
 	});
 	document.querySelector("#roulette-button").addEventListener('click', e => {
-		roulette();
+		let twiplaList = [];
+		document.querySelectorAll("#twipla-list li").forEach(function(element) {
+			twiplaList.push(element);
+		});
+		twiplaList.sort(function() {
+			return Math.random() - Math.random();
+		});
+		document.querySelector("#roulette-result").innerHTML = '';
+		document.querySelector('#roulette-result').append(document.createTextNode("あなたの選ぶべきTwiPlaは"))
+		let ulNode = document.createElement("ul")
+		ulNode.className = "button-list";
+		ulNode.append(twiplaList[0].cloneNode(true))
+		document.querySelector('#roulette-result').append(ulNode);
+		document.querySelector('#roulette-result').append(document.createTextNode("です。"))
 	});
 </script>
 </body>
