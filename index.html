@@ -81,9 +81,8 @@
 	<li><a href="https://twipla.jp/events/394529" target="_blank">Vifleurs TwiPla</a></li>
 </ul>
 <div id="roulette-button-container">
-	<input type="button" id="roulette-button" value="TwiPla ガチャをひく"></input>
+	<input type="button" id="roulette-button" value="TwiPla ガチャを引く"></input>
 </div>
-
 <div id="roulette-result"></div>
 
 <!--
@@ -235,7 +234,7 @@
 			return Math.random() - Math.random();
 		});
 		document.querySelector("#twipla-list").innerHTML = '';
-		twiplaList.forEach(function(element){
+		twiplaList.forEach(function(element) {
 			document.querySelector('#twipla-list').append(element);
 		});
 	});
@@ -248,12 +247,11 @@
 			return Math.random() - Math.random();
 		});
 		document.querySelector("#roulette-result").innerHTML = '';
-		document.querySelector('#roulette-result').append(document.createTextNode("あなたの選ぶべきTwiPlaは"))
-		let ulNode = document.createElement("ul")
+		document.querySelector('#roulette-result').append(document.createTextNode("ガチャ結果 → "));
+		let ulNode = document.createElement("ul");
 		ulNode.className = "button-list";
-		ulNode.append(twiplaList[0].cloneNode(true))
+		ulNode.append(twiplaList[0].cloneNode(true));
 		document.querySelector('#roulette-result').append(ulNode);
-		document.querySelector('#roulette-result').append(document.createTextNode("です。"))
 	});
 </script>
 </body>
