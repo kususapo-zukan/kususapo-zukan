@@ -716,6 +716,16 @@ strong {
 	border: 1px dashed #cccccc;
 	font-size: 11pt;
 }
+#main ul {
+	padding: 0 20px 20px;
+}
+#main table {
+	display: block;
+	padding: 0 20px 20px;
+}
+#main p + ul, #main ul + p, #main p + table, #main table + p {
+	margin-top: -10px;
+}
 @media screen and (max-width:480px) {
 	strong {
 		padding: 0;
@@ -867,8 +877,4 @@ strong {
 	#roulette-result {
 		padding: 0 10px 20px 10px;
 	}
-}
-
-#main ul{
-	padding: 0 0 0 20px;
 }
